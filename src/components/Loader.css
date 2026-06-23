@@ -1,0 +1,63 @@
+/* Loader.css */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: loaderFadeOut 0.5s ease 1.8s forwards;
+}
+
+.loader-logo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: #f5a623;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  animation: loaderPulse 1s ease infinite alternate;
+}
+
+.loader-tagline {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.loader-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #f5a623, #ffc14d);
+  border-radius: 99px;
+  animation: loaderProgress 1.6s ease forwards;
+}
+
+@keyframes loaderProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes loaderPulse {
+  from { opacity: 0.7; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes loaderFadeOut {
+  to { opacity: 0; pointer-events: none; visibility: hidden; }
+}

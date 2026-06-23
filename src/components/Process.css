@@ -1,0 +1,161 @@
+/* Process.css */
+.process {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.process::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245,166,35,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  justify-content: center;
+}
+
+.process-step-wrap {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.process-step {
+  flex: 1;
+  text-align: center;
+  padding: 36px 20px;
+  background: var(--white-10);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.process-step:hover {
+  border-color: rgba(245,166,35,0.2);
+  transform: translateY(-4px);
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(245,166,35,0.12);
+  line-height: 1;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.step-icon i {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.process-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  line-height: 1.65;
+}
+
+/* Arrow connector */
+.process-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  margin-top: 60px;
+  color: var(--gold);
+  font-size: 1rem;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .process-steps {
+    flex-direction: column;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .process-step-wrap {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .process-step {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 22px;
+  }
+
+  .step-icon {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .process-step h3,
+  .process-step p {
+    text-align: left;
+  }
+
+  .process-arrow {
+    margin: 8px 0;
+    transform: rotate(90deg);
+    padding: 0;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .process-step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-icon {
+    margin: 0 auto;
+  }
+
+  .process-step h3,
+  .process-step p {
+    text-align: center;
+  }
+}
